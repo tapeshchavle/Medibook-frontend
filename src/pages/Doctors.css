@@ -1,0 +1,133 @@
+/* ===== Doctors Page ===== */
+.doctors-page {
+    padding: 8rem 2rem 4rem;
+    min-height: 100vh;
+}
+
+.doctors-page-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.doctors-page-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.doctors-page-header p {
+    color: var(--color-text-secondary);
+    font-size: 1.05rem;
+}
+
+/* Search & Filter */
+.doctors-controls {
+    max-width: var(--container-max);
+    margin: 0 auto 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.doctors-search {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+}
+
+.doctors-search input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 3rem;
+    background: var(--glass-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: var(--radius-full);
+    color: var(--color-text-primary);
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.doctors-search input:focus {
+    border-color: var(--color-cyan);
+    box-shadow: 0 0 20px var(--color-cyan-glow);
+}
+
+.doctors-search input::placeholder {
+    color: var(--color-text-muted);
+}
+
+.doctors-search .search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-text-muted);
+    pointer-events: none;
+}
+
+.filter-pills {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-pill {
+    padding: 0.5rem 1.25rem;
+    border-radius: var(--radius-full);
+    background: var(--glass-bg);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    color: var(--color-text-secondary);
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.filter-pill:hover {
+    border-color: rgba(0, 229, 255, 0.3);
+    color: var(--color-cyan);
+}
+
+.filter-pill.active {
+    background: var(--gradient-primary);
+    color: #fff;
+    border-color: transparent;
+    box-shadow: 0 4px 15px var(--color-cyan-glow);
+}
+
+/* Doctors Grid */
+.doctors-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+.no-results {
+    text-align: center;
+    color: var(--color-text-muted);
+    font-size: 1.1rem;
+    padding: 4rem 0;
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 1024px) {
+    .doctors-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .doctors-grid {
+        grid-template-columns: 1fr;
+    }
+}

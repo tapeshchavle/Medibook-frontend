@@ -1,0 +1,75 @@
+/* ===== Appointment Card ===== */
+.appointment-card {
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.appointment-card-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-md);
+    object-fit: cover;
+    border: 2px solid rgba(0, 229, 255, 0.15);
+}
+
+.appointment-card-info {
+    flex: 1;
+}
+
+.appointment-card-info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+}
+
+.appointment-card-info .appointment-specialty {
+    font-size: 0.8rem;
+    color: var(--color-cyan);
+}
+
+.appointment-card-meta {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.3rem;
+}
+
+.appointment-card-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+.appointment-card-meta svg {
+    color: var(--color-text-muted);
+}
+
+.appointment-status {
+    padding: 0.3rem 0.75rem;
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.appointment-status.upcoming {
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--color-cyan);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+.appointment-status.completed {
+    background: rgba(0, 230, 118, 0.1);
+    color: var(--color-emerald);
+    border: 1px solid rgba(0, 230, 118, 0.2);
+}
+
+.appointment-status.cancelled {
+    background: rgba(255, 64, 129, 0.1);
+    color: var(--color-rose);
+    border: 1px solid rgba(255, 64, 129, 0.2);
+}

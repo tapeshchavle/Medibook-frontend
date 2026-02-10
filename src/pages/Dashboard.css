@@ -1,0 +1,179 @@
+/* ===== Dashboard Page ===== */
+.dashboard-page {
+    padding: 8rem 2rem 4rem;
+    min-height: 100vh;
+    max-width: var(--container-max);
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    margin-bottom: 2.5rem;
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.dashboard-header h1 span {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.dashboard-header p {
+    color: var(--color-text-secondary);
+}
+
+/* Stats Row */
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.dash-stat-card {
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dash-stat-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.dash-stat-icon.cyan {
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--color-cyan);
+}
+
+.dash-stat-icon.violet {
+    background: rgba(124, 77, 255, 0.1);
+    color: var(--color-violet);
+}
+
+.dash-stat-icon.emerald {
+    background: rgba(0, 230, 118, 0.1);
+    color: var(--color-emerald);
+}
+
+.dash-stat-icon.amber {
+    background: rgba(255, 171, 0, 0.1);
+    color: var(--color-amber);
+}
+
+.dash-stat-info h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text-primary);
+}
+
+.dash-stat-info span {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+}
+
+/* Main Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.dashboard-section h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: var(--color-text-primary);
+}
+
+.appointments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Quick Actions */
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.quick-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--glass-bg);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: var(--radius-md);
+    color: var(--color-text-primary);
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    text-decoration: none;
+}
+
+.quick-action-btn:hover {
+    border-color: rgba(0, 229, 255, 0.2);
+    background: rgba(0, 229, 255, 0.04);
+    transform: translateX(4px);
+    color: var(--color-cyan);
+}
+
+.quick-action-btn svg {
+    color: var(--color-cyan);
+}
+
+/* Health tip */
+.health-tip {
+    padding: 1.5rem;
+    margin-top: 1.5rem;
+    background: var(--gradient-card);
+    border: 1px solid rgba(0, 229, 255, 0.12);
+    border-radius: var(--radius-md);
+}
+
+.health-tip h4 {
+    color: var(--color-cyan);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.health-tip p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+    .dashboard-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .dashboard-stats {
+        grid-template-columns: 1fr;
+    }
+}
