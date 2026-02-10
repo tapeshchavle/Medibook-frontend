@@ -156,7 +156,62 @@
         font-size: 1.2rem;
     }
 
-    .navbar-cta .btn {
+    .navbar-cta .btn,
+    .navbar-cta .theme-toggle,
+    .navbar-cta .nav-username,
+    .navbar-cta .nav-user-menu {
+        display: none;
+        /* Hide desktop elements on mobile */
+    }
+
+    /* Mobile Buttons Container */
+    .mobile-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        width: 100%;
+        align-items: center;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-theme-toggle {
+        list-style: none;
+    }
+
+    .theme-toggle-text {
+        background: none;
+        border: 1px solid var(--color-border-glass);
+        color: var(--color-text-secondary);
+        padding: 0.5rem 1rem;
+        border-radius: var(--radius-full);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+    }
+
+    .mobile-auth {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .mobile-username {
+        color: var(--color-cyan);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Hide mobile-only buttons on desktop */
+@media (min-width: 769px) {
+    .mobile-buttons {
         display: none;
     }
 }

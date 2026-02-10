@@ -50,11 +50,36 @@ function Navbar() {
                             <Link
                                 to={link.to}
                                 className={location.pathname === link.to ? 'active' : ''}
+                                onClick={() => setMobileOpen(false)}
                             >
                                 {link.label}
                             </Link>
                         </li>
                     ))}
+
+                    {/* Mobile Only Buttons */}
+                    <div className="mobile-buttons">
+                        <li className="mobile-theme-toggle">
+                            <button onClick={toggleTheme} className="theme-toggle-text">
+                                {theme === 'dark' ? 'Light Mode' : 'Dark Mode'}
+                                {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                            </button>
+                        </li>
+
+                        {isAuthenticated ? (
+                            <li className="mobile-auth">
+                                <span className="mobile-username">Hi, {user?.name?.split(' ')[0]}</span>
+                                <button onClick={() => { handleLogout(); setMobileOpen(false); }} className="btn btn-secondary btn-sm">
+                                    Logout
+                                </button>
+                            </li>
+                        ) : (
+                            <li className="mobile-auth">
+                                <Link to="/login" className="btn btn-ghost btn-sm" onClick={() => setMobileOpen(false)}>Login</Link>
+                                <Link to="/booking" className="btn btn-primary btn-sm" onClick={() => setMobileOpen(false)}>Get Started</Link>
+                            </li>
+                        )}
+                    </div>
                 </ul>
 
                 <div className="navbar-cta">
